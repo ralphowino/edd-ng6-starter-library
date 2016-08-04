@@ -1,0 +1,7 @@
+{
+  "name": "NG-6-Starter",
+  "slug": "ng-6-starter",
+  "dependencies": {
+    "ralphowino/edd-js-library": "master"
+  }
+}

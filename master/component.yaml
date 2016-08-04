@@ -1,0 +1,33 @@
+description: an angular component in es6
+
+uses: javascript:module
+
+variables:
+  schema:
+    type: object
+    properties:
+      component_name:
+        type: string
+    required:
+      - component_name
+  form:
+    - '*'
+
+
+definitions:
+  module_name: {{component_name}}Component
+  file_name: {{component_name}}{{'.component'}}
+  imports:
+    - import_name: controller
+      import_path: "./{{component_name}}.controller.js"
+    - import_name: template
+      import_path: "./{{component_name}}.html"
+    - import_path: "./{{component_name}}.styl"
+
+  module_declaration: |
+    let {{module_name}}Component = {
+      restrict: 'E',
+      bindings: {},
+      template,
+      controller
+    }

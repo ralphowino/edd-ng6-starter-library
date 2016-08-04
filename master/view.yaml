@@ -1,0 +1,18 @@
+description: an ng-6 component view
+
+uses: html:file
+
+variables:
+  schema:
+    type: object
+    properties:
+      component_name:
+        type: string
+    required:
+      - component_name
+
+  form:
+    - '*'
+
+definitions:
+  file_name: {{component_name}}

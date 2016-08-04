@@ -1,0 +1,25 @@
+description: an es6 angular controller
+
+uses: javascript:module
+
+variables:
+  schema:
+    type: object
+    properties:
+      component_name:
+        type: string
+    required:
+      - component_name
+
+  form:
+    - '*'
+
+definitions:
+  module_name: {{component_name}}Controller #camelCase
+  file_name: {{component_name}}{{'.controller'}}
+  module_declaration: |
+    class {{module_name}} {
+      constructor(){
+        this.name = {{module_name}}
+      }
+    }

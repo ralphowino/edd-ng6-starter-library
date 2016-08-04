@@ -1,0 +1,35 @@
+description: a ng-6 module
+
+uses: javascript:module
+
+variables:
+  schema:
+    type: object
+    properties:
+      component_name:
+        type: string
+
+    required:
+      - component_name
+
+
+  form:
+    - '*'
+
+definitions:
+  module_name: {{component_name}}Module
+  file_name: {{component_name}}
+  imports:
+    - import_name: angular
+      import_path: "angular"
+    - import_name: uiRouter
+      import_path: "angular-ui-router"
+    - import_name: {{component_name}}Component
+      import_path: "./{{component_name}}.component"
+
+  module_declaration: |
+    let {{module_name}} = angular.module('{{component_name}}', [
+      uiRouter
+    ])
+    .component('{{component_name}}', {{module_name}})
+    .name;
